@@ -29,7 +29,7 @@ fi
 
 if [[ "${GIT_ACCESS_TOKEN}" != "" ]]; then
    # Add https header as per instructions on Foundries Documentation
-   git config --global http.https://source.foundries.io.extraheader "Authorization: basic $(echo -n ${GIT_ACCESS_TOKEN} | base64 -w0)"
+   git config --global http.https://source.foundries.io.extraheader "Authorization: basic ${GIT_ACCESS_TOKEN}"
 else
    echo "FATAL: You must specify a GIT_ACCESS_TOKEN in order to mirror this repo" > /dev/stderr
    exit 1
