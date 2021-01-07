@@ -12,5 +12,4 @@ LABEL "homepage"="https://github.com/jeptechnology/mirror-action"
 LABEL "maintainer"="James Parker <james@jeptechnology.com>"
 
 COPY entrypoint.sh /entrypoint.sh
-COPY cred-helper.sh /cred-helper.sh
 ENTRYPOINT ["/entrypoint.sh"]
