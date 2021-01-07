@@ -8,24 +8,8 @@ inputs:
   REMOTE:
     description: "The remote repository e.g. https://github.com/octocat/foo.git or git@github.com:octocat/foo.git"
     required: false
-  GIT_USERNAME:
-    description: "Username for remote repository"
-    required: false
-  GIT_PASSWORD:
-    description: "The git https password or token for the remote repository"
-    required: false
-  GIT_SSH_PRIVATE_KEY:
-    description: "The ssh private key for writing to the remote repository, if using ssh"
-    required: false
-  GIT_SSH_PUBLIC_KEY:
-    description: "The ssh public key for writing to the remote repository. Normally, not required at all"
-    required: false
-  GIT_SSH_KNOWN_HOSTS:
-    description: "The contents of a SSH known_hosts file for host key verification"
-    required: false
-  GIT_SSH_NO_VERIFY_HOST:
-    description: "if true, skips host key verification. Mutually exclusive with GIT_SSH_KNOWN_HOSTS"
-    default: "false"
+  GIT_ACCESS_TOKEN:
+    description: "The git access token for the remote repository"
     required: false
   PUSH_ALL_REFS:
     description: "Push all refs instead of just the current branch"
