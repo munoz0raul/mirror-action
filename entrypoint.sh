@@ -7,7 +7,7 @@ fi
 
 REMOTE=${INPUT_REMOTE:-"$*"}
 GIT_ACCESS_TOKEN=${INPUT_GIT_ACCESS_TOKEN}
-GIT_PUSH_ARGS=${INPUT_GIT_PUSH_ARGS:-"--tags --force --prune"}
+GIT_PUSH_ARGS=${INPUT_GIT_PUSH_ARGS:-"--tags --force"}
 HAS_CHECKED_OUT="$(git rev-parse --is-inside-work-tree 2>/dev/null || /bin/true)"
 
 

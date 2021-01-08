@@ -7,9 +7,9 @@ LABEL "com.github.actions.description"="Automate mirroring of git commits to ano
 LABEL "com.github.actions.icon"="git-commit"
 LABEL "com.github.actions.color"="green"
 
-LABEL "repository"="https://github.com/jeptechnology/mirror-action"
-LABEL "homepage"="https://github.com/jeptechnology/mirror-action"
-LABEL "maintainer"="James Parker <james@jeptechnology.com>"
+LABEL "repository"="https://github.com/foundriesio/mirror-action"
+LABEL "homepage"="https://github.com/foundriesio/mirror-action"
+LABEL "maintainer"="Michael Scott <mike@foundries.io>"
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
