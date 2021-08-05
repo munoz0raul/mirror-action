@@ -15,13 +15,13 @@ on: [push]
 jobs:
   to_foundries:
     runs-on: ubuntu-18.04
-      steps:
-        - uses: actions/checkout@v1
-        - uses: foundriesio/mirror-action@master
-          with:
-            REMOTE: "https://source.foundries.io/factories/<FACTORY-NAME>/containers.git"
-            GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
-            PUSH_ALL_REFS: "false"
+    steps:
+      - uses: actions/checkout@v1
+      - uses: foundriesio/mirror-action@master
+        with:
+          REMOTE: "https://source.foundries.io/factories/<FACTORY-NAME>/containers.git"
+          GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+          PUSH_ALL_REFS: "false"
 ```
 
 You can further customize the push behavior with the `GIT_PUSH_ARGS` parameter. 
