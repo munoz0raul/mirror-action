@@ -3,7 +3,7 @@ A GitHub Action for mirroring your commits to a different remote repository
 
 ### Mirror a repository with access token over HTTPS
 
-For example, this project uses the following workflow to mirror from GitHub to Foundries.io Factory `container` repo
+For example, this project uses the following workflow to mirror from GitHub to Foundries.io Factory `containers` repo
 
 The following .yml content should be added to the GitHub repo which you want mirrored as `.github/workflows/mirror.yml` on the default branch.
 
@@ -16,13 +16,17 @@ jobs:
   to_foundries:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: foundriesio/mirror-action@master
         with:
           REMOTE: "https://source.foundries.io/factories/<FACTORY-NAME>/containers.git"
           GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
-          PUSH_ALL_REFS: "false"
+          PUSH_ALL_REFS: "true"
 ```
+
+**NOTE:** by default, all branches are pushed. If you want to avoid 
+this behavior, set `PUSH_ALL_REFS: "false"` and `GITHUB_REF: "<branch>"` to 
+select the desired branch. 
 
 You can further customize the push behavior with the `GIT_PUSH_ARGS` parameter. 
 By default, this is set to `--tags --force`
