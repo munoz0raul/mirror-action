@@ -5,7 +5,7 @@ A GitHub Action for mirroring your commits to a different remote repository
 
 For example, this project uses the following workflow to mirror from GitHub to Foundries.io Factory `containers` repo
 
-The following .yml content should be added to the GitHub repo which you want mirrored as `.github/workflows/mirror.yml` on the default branch.
+The following .yml content should be added to the GitHub repo branch which you want mirrored as `.github/workflows/mirror.yml`.
 
 ```yaml
 name: Mirroring
@@ -22,11 +22,10 @@ jobs:
           REMOTE: "https://source.foundries.io/factories/<FACTORY-NAME>/containers.git"
           GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
           PUSH_ALL_REFS: "false"
-          GITHUB_REF: master
 ```
 
-**NOTE:** This example pushes the `master` branch. If you want 
-synchronize all branches, set `PUSH_ALL_REFS: "true"`
+**NOTE:** This example pushes just the branch you working. If you want synchronize 
+all branches, set `PUSH_ALL_REFS: "true"`
 
 You can further customize the push behavior with the `GIT_PUSH_ARGS` parameter. 
 By default, this is set to `--tags --force`
